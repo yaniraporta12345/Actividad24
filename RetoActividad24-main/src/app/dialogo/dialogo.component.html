@@ -1,0 +1,15 @@
+<ol>
+    <li>
+      <mat-form-field appearance="fill">
+        <mat-label>¿Cúal es tu nombre?</mat-label>
+        <input matInput [(ngModel)]="name">
+      </mat-form-field>
+    </li>
+    <li>
+      <button mat-raised-button (click)="openDialog()">Responder</button>
+    </li>
+    <li *ngIf="deporte">
+      Tu deporte favorito es: <i>{{deporte}}</i>
+    </li>
+  </ol>
+  

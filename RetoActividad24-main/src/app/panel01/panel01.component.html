@@ -1,0 +1,31 @@
+<div class="grid-container">
+  <h1 class="mat-h1 text-center">Panel 01 Dashboard</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile class="text-center" *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.title}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <section>
+          <mat-card-content class="dashboard-card-content">
+            <section >
+              <section>
+                <h2>La musica en nosotros</h2>
+                <img class="example-card" mat-card-image src="https://thumbs.dreamstime.com/b/partido-del-universo-astronauta-de-dj-acontecimiento-la-danza-m%C3%BAsica-ejemplo-vector-con-el-148134013.jpg" alt="Photo of a Shiba Inu">
+              </section>
+            </section>
+          </mat-card-content>
+        </section>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
